@@ -23,7 +23,7 @@ class WeightedGraph:
         dist[src] = 0
         path = {}
         while Q:
-            u = max(Q, key=lambda x: dist[x])
+            u = max(Q, key=lambda x: dist[x])   
             Q.remove(u)
             for v in range(self.vertices):
                 if self.graph[u][v] > 0:
@@ -39,7 +39,7 @@ def take_input():
     (N, R) = map(int, input().split())
     g = WeightedGraph(N)
     for i in range(R):
-        (u, v, w) = map(int, input("Enter the C1 C2 P : ").split())
+        (u, v, w) = map(int, input().split())
         g.graph[u - 1][v - 1] = w
     (src, dest, tourist) = map(int, input().split())
     path = g.Dijkstra_max(src - 1)
